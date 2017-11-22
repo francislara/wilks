@@ -8,9 +8,9 @@ const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER
 });
 
-const receiveCurrentUser = user => ({
+const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
-  user
+  currentUser
 });
 
 const receiveErrors = errors => ({
