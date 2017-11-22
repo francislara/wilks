@@ -1,21 +1,42 @@
 {
   "name": "wilks",
   "private": true,
-    "dependencies": {
-      "babel-core": "^6.26.0",
-      "babel-loader": "^7.1.2",
-      "babel-preset-es2015": "^6.24.1",
-      "babel-preset-react": "^6.24.1",
-      "react": "^15.6.1",
-      "react-dom": "^15.6.1",
-      "react-redux": "^5.0.6",
-      "react-router-dom": "^4.2.2",
-      "redux": "^3.7.2",
-      "redux-devtools-extension": "^2.13.2",
-      "redux-logger": "^3.0.6",
-      "webpack": "^3.5.6"
-    },
-    "devDependencies": {
-      "redux-devtools-extension": "^2.13.2"
-    }
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "lodash": "^4.17.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "^3.0.6",
+    "webpack": "^3.5.6"
+  },
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.2"
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francislara/wilks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francislara/wilks/issues"
+  },
+  "homepage": "https://github.com/francislara/wilks#readme"
 }
