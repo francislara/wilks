@@ -11,6 +11,14 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    document.body.classList.add('background-image');
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove('background-image');
+  }
+
   handleInput(type) {
     return (e) => {
       this.setState({
@@ -29,8 +37,8 @@ class Login extends React.Component {
   render() {
     return (
       <div className="session-form">
-        <h2>Log In!</h2>
         <form>
+          <h2>Welcome Back!</h2>
           <label>Email:
             <input 
               type="text"
@@ -51,7 +59,8 @@ class Login extends React.Component {
       </div>
     );
   }
-
+  
 }
 
 export default Login;
+// {/* <img src="https://i.imgur.com/t2PPEVf.jpg" /> */}
