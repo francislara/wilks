@@ -1,0 +1,96 @@
+.background-image {
+  background: url("https://i.imgur.com/t2PPEVf.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.session-form {
+  position: relative;
+  min-height: 100vh;
+  .auth-container {
+    position: absolute;
+    width: 628px;
+    height: 394px;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    .auth-logo {
+      width: 168px;
+      height: 334px;
+      padding: 30px;
+      display: inline-block;
+      background: hsla(0, 0%, 100%, .8);
+      border-radius: 4px 0 0 4px;
+      text-align: center;
+
+      p {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 72px;
+        font-family: 'Oswald', sans-serif;
+        line-height: 300px;
+        color: #7289da;
+      }
+    }
+    form {
+      display: inline-block;
+      font-family: 'Roboto', sans-serif;
+      height: 334px;
+      width: 340px;
+      padding: 30px;
+      background: rgba(40, 43, 48, .92);
+      vertical-align: top;
+      border-radius: 0 4px 4px 0;
+      h2 {
+        font-family: 'Francois One', sans-serif;
+        text-align: center;
+        letter-spacing: .4px;
+        text-transform: uppercase;
+        font-weight: 900;
+        margin-bottom: 30px;
+        color: white;
+      }
+      label {
+        font-family: 'Francois One', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        text-transform: uppercase;
+        letter-spacing: .2px;
+        color: #87909c;
+        font-size: 12px;
+        font-weight: 900;
+      }
+      input {
+        display: block;
+        height: 34px;
+        padding: 1px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        background-color: rgb(250, 255, 189);
+        border: 0;
+        padding: 1px;
+      }
+      input:focus {
+        outline: none;
+      }
+      button {
+        display: inline-block;
+        line-height: 58px;
+        margin: 50px 0 0;
+        padding: 0;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        background-color: #7289da;
+        color: white;
+        border: 0;
+        border-radius: 3px;
+        font-size: 15px;
+      }
+    }
+  }
+}
