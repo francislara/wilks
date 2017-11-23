@@ -2,11 +2,12 @@ import React from 'react';
 import RegisterContainer from './session/register_container';
 import LoginContainer from './session/login_container';
 import { Route } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 
 const App = () => (
   <div>
-    <Route path="/register" component={RegisterContainer} />
-    <Route path="/login" component={LoginContainer} />
+    <AuthRoute path="/register" component={RegisterContainer} />
+    <ProtectedRoute path="/login" component={LoginContainer} />
   </div>
 );
 
