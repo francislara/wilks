@@ -17,7 +17,7 @@
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    .auth-logo {
+    .auth-left {
       width: 168px;
       height: 334px;
       padding: 30px;
@@ -26,12 +26,18 @@
       border-radius: 4px 0 0 4px;
       text-align: center;
 
+      img {
+        
+        display: block;
+        margin-left: 0 auto;
+      }
+
       p {
         display: inline-block;
         vertical-align: middle;
         font-size: 72px;
         font-family: 'Oswald', sans-serif;
-        line-height: 300px;
+        line-height: normal;
         color: #7289da;
       }
     }
