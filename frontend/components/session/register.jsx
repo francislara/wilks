@@ -22,7 +22,7 @@ class Register extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNewUser(this.state).then(() => 
+    this.props.register(this.state).then(() => 
       this.props.history.push('/servers')
     );
   }
@@ -50,7 +50,7 @@ class Register extends React.Component {
             <input
               type="password"
               value={this.state.password}
-              onChange={this.handleInput('username')}
+              onChange={this.handleInput('password')}
             />
           </label>
           <button onClick={this.handleSubmit}>Register!</button>

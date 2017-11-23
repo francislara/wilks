@@ -18,7 +18,7 @@ const receiveErrors = errors => ({
   errors
 });
 
-export const createNewUser = formUser => dispatch => (
+export const register = formUser => dispatch => (
   APIUtil.postUser(formUser).then(user => ( 
     dispatch(receiveCurrentUser(user))
   ), err => (

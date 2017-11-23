@@ -42,6 +42,7 @@ class Api::UsersController < ApplicationController
       render :show
     else
       render json: ['Could not locate user'], status: 400
+    end
   end
 
   private
