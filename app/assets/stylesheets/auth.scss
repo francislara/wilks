@@ -100,11 +100,15 @@
         padding: 1px;
         margin-top: 12px;
         margin-bottom: 12px;
-        background-color: rgb(250, 255, 189);
+        background: transparent;
+        // background-color: rgb(250, 255, 189);
         border: 0;
-        padding: 1px;
+        color: white;
+        font-size: 16px;
+        border-bottom: 1px solid hsla(0, 0%, 100%, .1);
       }
       input:focus {
+        border-bottom: 2px solid white;
         outline: none;
       }
       button {
@@ -124,6 +128,7 @@
 
       button:hover {
         background-color: #5f78ca;
+        cursor: pointer;
       }
 
       .register-button {
