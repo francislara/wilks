@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Register extends React.Component {
   constructor(props) {
@@ -10,6 +11,14 @@ class Register extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    document.body.classList.add('background-image');
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove('background-image');
   }
 
   handleInput(type) {
@@ -30,31 +39,38 @@ class Register extends React.Component {
   render() {
     return (
       <div className="session-form">
-        <h2>Sign Up!</h2>
-        <form>
-          <label>Username:
-            <input 
-              type="text"
-              value={this.state.username}
-              onChange={this.handleInput('username')}
-            />
-          </label>
-          <label>Email:
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.handleInput('email')}
-            />
-          </label>
-          <label>Password:
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput('password')}
-            />
-          </label>
-          <button onClick={this.handleSubmit}>Register!</button>
-        </form>
+        <div className="auth-container">
+          <div className="auth-left">
+            <img src='https://i.imgur.com/Cp8ii7N.png' />
+            <p>wilks</p>
+          </div>
+          <form>
+            <h2>Create an Account</h2>
+            <label>Email
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.handleInput('email')}
+              />
+            </label>
+            <label>Username
+              <input
+                type="text"
+                value={this.state.username}
+                onChange={this.handleInput('username')}
+              />
+            </label>
+            <label>Password
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.handleInput('password')}
+              />
+            </label>
+            <button className='register-button' onClick={this.handleSubmit}>Continue</button>
+            <p>Already have an account? <Link to='/login' className='auth-link'>Login</Link> or login as a guest <span onClick={this.handleDemo} className='auth-link'>here.</span></p>
+          </form>
+        </div>
       </div>
     );
   }

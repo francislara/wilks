@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class Login extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +34,12 @@ class Login extends React.Component {
     this.props.login(this.state).then(() =>
       this.props.history.push('/servers')
     );
+  }
+
+  handleDemo(e) {
+    e.preventDefault();
+    let user = { email: 'email.com', password: 'password' };
+    this.props.login(user);
   }
 
   render() {
@@ -60,6 +68,7 @@ class Login extends React.Component {
               />
             </label>
             <button onClick={this.handleSubmit}>Login</button>
+            <p>Need an account? <Link to='/register' className='auth-link'>Register</Link> or login as a guest <span onClick={this.handleDemo}className='auth-link'>here.</span></p>
           </form>
         </div>
       </div>

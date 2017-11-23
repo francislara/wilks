@@ -17,12 +17,19 @@
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    background: url("https://i.imgur.com/9yfUVez.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 200% 200%;
+    border-radius: 4px;
+    
     .auth-left {
       width: 168px;
       height: 334px;
       padding: 30px;
       display: inline-block;
-      background: hsla(0, 0%, 100%, .8);
+      background: hsla(0, 0%, 100%, .7);
       border-radius: 4px 0 0 4px;
       text-align: center;
 
@@ -42,12 +49,29 @@
       }
     }
     form {
+      p {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #87909c;
+        
+        .auth-link {
+          text-decoration: none;
+          color: white;
+          padding-bottom: 5px;
+        }
+
+        .auth-link:hover {
+          cursor: pointer;
+          border-bottom: 2px solid white;
+        }
+      }
+
       display: inline-block;
       font-family: 'Roboto', sans-serif;
       height: 334px;
       width: 340px;
       padding: 30px;
-      background: rgba(40, 43, 48, .92);
+      background: rgba(40, 43, 48, .75);
       vertical-align: top;
       border-radius: 0 4px 4px 0;
       h2 {
@@ -96,6 +120,14 @@
         border: 0;
         border-radius: 3px;
         font-size: 15px;
+      }
+
+      button:hover {
+        background-color: #5f78ca;
+      }
+
+      .register-button {
+        margin: 10px 0 0;
       }
     }
   }
