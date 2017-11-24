@@ -24,5 +24,15 @@ const Protected = ({ component: Component, path, loggedIn }) => (
   />
 );
 
+const Home = ({ component: Component, path, loggedIn }) => (
+  <Route
+    exact path={path}
+    render={props => (
+      loggedIn ? <Redirect to="/servers" /> : <Redirect to="/login" />
+    )}
+  />
+);
+
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
+export const HomeRoute = withRouter(connect(mapStateToProps)(Home));

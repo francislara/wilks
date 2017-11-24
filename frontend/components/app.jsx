@@ -1,13 +1,18 @@
 import React from 'react';
 import RegisterContainer from './session/register_container';
 import LoginContainer from './session/login_container';
-import { Route } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../utils/route_util';
+import { Route, Switch } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute, HomeRoute } from '../utils/route_util';
+import Favicon from 'react-favicon';
 
 const App = () => (
   <div>
-    <AuthRoute path="/register" component={RegisterContainer} />
-    <AuthRoute path="/login" component={LoginContainer} />
+    <Favicon url="https://i.imgur.com/7kXfJ3n.png" />
+    <Switch>
+      <AuthRoute path="/register" component={RegisterContainer} />
+      <AuthRoute path="/login" component={LoginContainer} />
+      <HomeRoute path="/" />
+    </Switch>
   </div>
 );
 
