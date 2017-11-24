@@ -39,7 +39,7 @@ class Login extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
-    let user = { email: 'email.com', password: 'password' };
+    let user = { email: 'guestuser@guest.com', password: 'password' };
     this.props.login(user);
   }
 
