@@ -33,7 +33,7 @@ class Register extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
-    let user = { email: 'email.com', password: 'password' };
+    let user = { email: 'guestuser@guest.com', password: 'password' };
     this.props.login(user);
   }
 
@@ -71,7 +71,7 @@ class Register extends React.Component {
       <div className="session-form">
         <div className="auth-container">
           <div className="auth-left">
-            <img src='https://i.imgur.com/Cp8ii7N.png' />
+            <img src='http://res.cloudinary.com/lara-cloud1/image/upload/v1511561171/logo-transparent_a9dj2c.png' />
             <p>wilks</p>
           </div>
           <form>

@@ -7,7 +7,7 @@ import Favicon from 'react-favicon';
 
 const App = () => (
   <div>
-    <Favicon url="https://i.imgur.com/7kXfJ3n.png" />
+    <Favicon url="http://res.cloudinary.com/lara-cloud1/image/upload/v1511561102/favicon_hn4h6z.png" />
     <Switch>
       <AuthRoute path="/register" component={RegisterContainer} />
       <AuthRoute path="/login" component={LoginContainer} />

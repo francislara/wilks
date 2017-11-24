@@ -1,7 +1,17 @@
 class Api::UsersController < ApplicationController
   
   def create
+    img_urls = [
+      "http://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-orange_rvncte.png",
+      "http://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-red_ehngvf.png",
+      "http://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-blue_tlay0m.png",
+      "http://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-purple_jzabh6.png",
+      "http://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-green_egclew.png",
+      "http://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-teal_oufxew.png"
+    ]
+    
     @user = User.new(user_params)
+    @user.img_url = img_urls[Random.rand(img_urls.length)]
 
     if @user.save
       login!(@user)
