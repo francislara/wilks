@@ -11,6 +11,7 @@ class Login extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
   }
 
   componentDidMount() {
@@ -42,6 +43,28 @@ class Login extends React.Component {
     this.props.login(user);
   }
 
+  handleErrors(type) {
+    let regex = new RegExp(type);
+    let errors;
+    if(this.props.errors.length > 0) {
+      errors = this.props.errors.filter( (error) => {
+        return error.match(regex);
+      });
+    }
+    if (errors) {
+      if (errors.length > 0) {
+        $(`.${type}-input`).addClass("red");
+        errors[0] = `(${errors[0]})`;
+      } else {
+        $(`.${type}-input`).removeClass("red");
+      }
+    }
+
+    return (
+      <span className='auth-error'>{errors}</span>
+    );
+  }
+
   render() {
     return (
       <div className="session-form">
@@ -52,7 +75,7 @@ class Login extends React.Component {
           </div>
           <form>
             <h2>Welcome Back!</h2>
-            <label>Email
+            <label><p className="email-input">Email {this.handleErrors('email')}</p> 
               <input 
                 type="text"
                 value={this.state.email}
@@ -60,7 +83,7 @@ class Login extends React.Component {
               />
             </label>
 
-            <label>Password
+            <label><p className="password-input">Password {this.handleErrors('password')}</p> 
               <input
                 type="password"
                 value={this.state.password}

@@ -6,6 +6,8 @@
   background-size: cover;
 }
 
+
+
 .session-form {
   position: relative;
   min-height: 100vh;
@@ -93,7 +95,17 @@
         color: #87909c;
         font-size: 12px;
         font-weight: 900;
-      }
+
+        .red {
+          color: #f04747;
+        }
+
+        p {
+          display: inline-block;
+          margin-top: 0;
+          }
+        }
+        
       input {
         display: block;
         height: 34px;
@@ -135,5 +147,14 @@
         margin: 10px 0 0;
       }
     }
+  }
+
+  .auth-error {
+    font-family: 'Roboto', sans-serif;
+    display: inline-block;
+    margin-top: 0;
+    font-weight: 0;
+    font-size: 9.5px;
+    // color: inherit;
   }
 }
