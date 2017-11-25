@@ -71,7 +71,7 @@ class Register extends React.Component {
       <div className="session-form">
         <div className="auth-container">
           <div className="auth-left">
-            <img src='http://res.cloudinary.com/lara-cloud1/image/upload/v1511561171/logo-transparent_a9dj2c.png' />
+            <img src='https://res.cloudinary.com/lara-cloud1/image/upload/v1511561171/logo-transparent_a9dj2c.png' />
             <p>wilks</p>
           </div>
           <form>

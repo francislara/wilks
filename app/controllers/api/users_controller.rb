@@ -2,12 +2,12 @@ class Api::UsersController < ApplicationController
   
   def create
     img_urls = [
-      "http://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-orange_rvncte.png",
-      "http://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-red_ehngvf.png",
-      "http://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-blue_tlay0m.png",
-      "http://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-purple_jzabh6.png",
-      "http://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-green_egclew.png",
-      "http://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-teal_oufxew.png"
+      "https://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-orange_rvncte.png",
+      "https://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-red_ehngvf.png",
+      "https://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-blue_tlay0m.png",
+      "https://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-purple_jzabh6.png",
+      "https://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-green_egclew.png",
+      "https://res.cloudinary.com/lara-cloud1/image/upload/v1511559860/profile-picture-teal_oufxew.png"
     ]
     
     @user = User.new(user_params)
@@ -62,7 +62,7 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :img_url)
   end
 
 end
