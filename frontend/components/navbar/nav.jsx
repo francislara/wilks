@@ -18,7 +18,7 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    backgroundColor: '#444444',
+    backgroundColor: '#2f3136',
     border: 0
   }
 };
@@ -52,8 +52,16 @@ class Nav extends React.Component {
 
   closeModal() {
     this.setState({
-      modalOpen: false
+      modalOpen: false,
     });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.user.username !== this.props.user.username) {
+      this.setState({
+        username: nextProps.user.username
+      });
+    }
   }
 
   render() {
@@ -64,7 +72,7 @@ class Nav extends React.Component {
           isOpen={this.state.modalOpen} 
           style={customStyles}
           onRequestClose={this.closeModal}>
-            <UserModalContainer />
+            <UserModalContainer closeModal={this.closeModal}/>
         </Modal>
 
       </div>

@@ -98,7 +98,13 @@ class Register extends React.Component {
               />
             </label>
             <button className='register-button' onClick={this.handleSubmit}>Continue</button>
-            <p>Already have an account? <Link to='/login' className='auth-link'>Login</Link> or login as a guest <span onClick={this.handleDemo} className='auth-link'>here.</span></p>
+            <p>Already have an account? 
+              <Link to='/login' className='auth-link'> Login </Link>
+              or login as a guest
+              <span 
+                onClick={this.handleDemo} 
+                className='auth-link'> here.</span>
+            </p>
           </form>
         </div>
       </div>

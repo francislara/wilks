@@ -91,7 +91,15 @@ class Login extends React.Component {
               />
             </label>
             <button onClick={this.handleSubmit}>Login</button>
-            <p>Need an account? <Link to='/register' className='auth-link'>Register</Link> or login as a guest <span onClick={this.handleDemo}className='auth-link'>here.</span></p>
+            <p>Need an account? 
+              <Link 
+                to='/register' 
+                className='auth-link'> Register
+              </Link> or login as a guest 
+              <span 
+                onClick={this.handleDemo}
+                className='auth-link'> here.</span>
+            </p>
           </form>
         </div>
       </div>

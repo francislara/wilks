@@ -18,6 +18,12 @@ const receiveErrors = errors => ({
   errors
 });
 
+export const updateUser = currentUser => dispatch => (
+  APIUtil.updateUser(currentUser).then(user => (
+    dispatch(receiveCurrentUser(user))
+  ))
+);
+
 export const register = formUser => dispatch => (
   APIUtil.postUser(formUser).then(user => ( 
     dispatch(receiveCurrentUser(user))
