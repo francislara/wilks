@@ -4,7 +4,14 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 //TESTING ONLY REMOVE WHEN DONE
-import { postTeam, deleteTeam, joinTeam, leaveTeam } from './utils/teams';
+import { 
+  createTeam, 
+  getTeamsIndex, 
+  deleteTeam, 
+  updateTeam, 
+  joinTeam, 
+  leaveTeam 
+} from './actions/teams';
 //TESTING ONLY REMOVE WHEN DONE
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,8 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.joinTeam = joinTeam;
   window.leaveTeam = leaveTeam;
-  window.postTeam = postTeam;
+  window.createTeam = createTeam;
   window.deleteTeam = deleteTeam;
+  window.getTeamsIndex = getTeamsIndex;
+  window.updateTeam = updateTeam;
   //TESTING ONLY REMOVE WHEN DONE
   
   ReactDOM.render(<Root store={store} />, root);

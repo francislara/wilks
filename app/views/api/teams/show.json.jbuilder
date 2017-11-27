@@ -1,1 +1,5 @@
-json.extract! @team, :id, :owner_id, :name, :description, :img_url
+json.set! @team.id do
+  json.partial! 'api/teams/team', team: @team
+end
+
+

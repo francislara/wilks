@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :joined_teams, only: %i(create)
       resource :joined_team, only: %i(destroy)
     end
+    resources :joined_teams, only: %i(index)
   end
 
   root to: 'root#root'
