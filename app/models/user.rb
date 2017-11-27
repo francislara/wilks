@@ -3,6 +3,11 @@ class User < ApplicationRecord
   validates :username, :password_digest, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_many :teams,
+    primary_key: :id,
+    class_name: :Team,
+    foreign_key: :owner_id
+
   after_initialize :ensure_session_token
 
   attr_reader :password
