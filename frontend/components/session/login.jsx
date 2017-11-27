@@ -80,6 +80,7 @@ class Login extends React.Component {
                 type="text"
                 value={this.state.email}
                 onChange={this.handleInput('email')}
+                spellCheck="false"
               />
             </label>
 
@@ -88,6 +89,7 @@ class Login extends React.Component {
                 type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')}
+                spellCheck="false"
               />
             </label>
             <button onClick={this.handleSubmit}>Login</button>

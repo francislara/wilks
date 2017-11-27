@@ -54,6 +54,8 @@ class Nav extends React.Component {
     this.setState({
       modalOpen: false,
     });
+    // console.log(this.props);
+    this.props.updateUser(this.props.user);
   }
 
   componentWillReceiveProps(nextProps) {

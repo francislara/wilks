@@ -27,8 +27,10 @@ class UserModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateUser(this.state);
-    this.props.closeModal();
+    this.props.updateUser(this.state).then(() =>
+      this.props.closeModal()
+    );
+    
   }
 
   handleErrors(type) {
@@ -55,14 +57,15 @@ class UserModal extends React.Component {
 
   render() {
     return (
-      <div className="user-modal">
-        <form>
+      // <div className="user-modal">
+        <form className="user-modal">
           <h2>Edit User</h2>
           <label><p className="Email-input">Email {this.handleErrors('Email')}</p>
             <input
               type="text"
               value={this.state.email}
               onChange={this.handleInput('email')}
+              spellCheck="false"
             />
           </label>
           <label><p className="Username-input">Username {this.handleErrors('Username')}</p>
@@ -70,12 +73,13 @@ class UserModal extends React.Component {
               type="text"
               value={this.state.username}
               onChange={this.handleInput('username')}
+              spellCheck="false"
             />
           </label>
-          <button onClick={this.handleSubmit}>Save</button>
+          <button className="save-button" onClick={this.handleSubmit}>Save</button>
+          <button className="logout-button" onClick={this.props.logout}>Logout</button>
         </form>
-        <p className="logoutButton" onClick={this.props.logout}>Logout</p>
-      </div>
+      // </div>
     );
   }
 }

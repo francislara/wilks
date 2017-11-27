@@ -81,6 +81,7 @@ class Register extends React.Component {
                 type="text"
                 value={this.state.email}
                 onChange={this.handleInput('email')}
+                spellCheck="false"
               />
             </label>
             <label><p className="Username-input">Username {this.handleErrors('Username')}</p>
@@ -88,6 +89,7 @@ class Register extends React.Component {
                 type="text"
                 value={this.state.username}
                 onChange={this.handleInput('username')}
+                spellCheck="false"
               />
             </label>
             <label><p className="Password-input">password {this.handleErrors('Password')}</p>
@@ -95,6 +97,7 @@ class Register extends React.Component {
                 type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')}
+                spellCheck="false"
               />
             </label>
             <button className='register-button' onClick={this.handleSubmit}>Continue</button>
