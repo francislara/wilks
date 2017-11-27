@@ -5,6 +5,7 @@ class Api::TeamsController < ApplicationController
     @team.owner_id = current_user.id
 
     if @team.save
+      JoinedTeam.create(user_id: @team.owner_id, team_id: @team.id)
       render :show
     else
       render json: @team.errors.full_messages, status: 401
@@ -35,6 +36,7 @@ class Api::TeamsController < ApplicationController
 
     if @team
       @team.destroy
+      JoinedTeam.where(user_id: @team.owner_id, team_id: @team.id).destroy_all
       render :show
     else
       render json: ['Could not locate team'], status: 400

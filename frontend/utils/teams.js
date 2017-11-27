@@ -22,10 +22,23 @@ export const updateTeam = team => {
   });
 };
 
-export const deleteTeam = team => {
+export const deleteTeam = teamId => {
   return $.ajax({
-    url: `/api/teams/${team.id}`,
-    method: 'DELETE',
-    data: { team }
+    url: `/api/teams/${teamId}`,
+    method: 'DELETE'
+  });
+};
+
+export const joinTeam = teamId => {
+  return $.ajax({
+    url: `api/teams/${teamId}/joined_teams`,
+    method: 'POST'
+  });
+};
+
+export const leaveTeam = teamId => {
+  return $.ajax({
+    url: `api/teams/${teamId}/joined_team`,
+    method: 'DELETE'
   });
 };
