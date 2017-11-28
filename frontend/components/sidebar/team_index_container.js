@@ -3,7 +3,9 @@ import {
   getTeamsIndex, 
   updateTeam, 
   deleteTeam,
-  leaveTeam 
+  leaveTeam,
+  createTeam,
+  joinTeam 
 } from '../../actions/teams';
 import TeamIndex from './team_index';
 
@@ -17,6 +19,8 @@ const mapDispatchToProps = dispatch => ({
   updateTeam: team => dispatch(updateTeam(team)),
   deleteTeam: teamId => dispatch(deleteTeam(teamId)),
   leaveTeam: teamId => dispatch(leaveTeam(teamId)),
+  createTeam: team => dispatch(createTeam(team)),
+  joinTeam: teamId => dispatch(joinTeam(teamId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TeamIndex);

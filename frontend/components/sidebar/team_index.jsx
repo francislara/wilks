@@ -1,7 +1,9 @@
 import React from 'react';
 import Modal from 'react-modal';
 import TeamIndexItem from './team_index_item';
-import TeamModalContainer from '../modals/team_modal_container';
+import TeamModal from '../modals/team_modal';
+import CreateModal from '../modals/create_modal';
+import JoinModalContainer from '../modals/join_modal_container';
 
 const customStyles = {
   overlay: {
@@ -36,18 +38,21 @@ class TeamIndex extends React.Component {
       
     };
 
-    this.openModal = this.openModal.bind(this);
+    this.openMainModal = this.openMainModal.bind(this);
+    this.openCreateModal = this.openCreateModal.bind(this);
+    this.openJoinModal = this.openJoinModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getTeamsIndex();
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.teams !== this.teams) {
+    if (nextProps.teams !== this.props.teams) {
       this.setState({
-        teams: nextProps.teams
+        teams: nextProps.teams,
+        team_keys: nextProps.team_keys
       });
     }
   }
@@ -112,21 +117,29 @@ class TeamIndex extends React.Component {
           isOpen={this.state.mainModalOpen}
           style={customStyles}
           onRequestClose={this.closeModal}>
-          <TeamModalContainer closeModal={this.closeModal} />
+          <TeamModal 
+            closeModal={this.closeModal}
+            openCreateModal={this.openCreateModal}
+            openJoinModal={this.openJoinModal} />
         </Modal>
 
         <Modal
           isOpen={this.state.createModalOpen}
           style={customStyles}
           onRequestClose={this.closeModal}>
-          <TeamModalContainer closeModal={this.closeModal} />
+          <CreateModal 
+            closeModal={this.closeModal}
+            createTeam={this.props.createTeam}
+            openMainModal={this.openMainModal} />
         </Modal>
 
         <Modal
           isOpen={this.state.joinModalOpen}
           style={customStyles}
           onRequestClose={this.closeModal}>
-          <TeamModalContainer closeModal={this.closeModal} />
+          <JoinModalContainer 
+            closeModal={this.closeModal}
+            openMainModal={this.openMainModal} />
         </Modal>
 
 
