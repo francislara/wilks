@@ -28,15 +28,16 @@ class TeamIndex extends React.Component {
   render() {
     // console.log(this.state.teams);
     return (
-      <div className="side-bar">
+      <div className="sidebar-scroller">
         <div className="friends-button">
           <i className="fa fa-users" aria-hidden="true"></i>
         </div>
+        <div className="team-separator"></div>
         {
           this.state.team_keys.map(key => {
             if(this.state.teams[key]){
               return (
-                <TeamIndexItem key={key} team={this.state.teams[key]} />
+                <TeamIndexItem key={key} keys={key} team={this.state.teams[key]} />
               );    
             }
           })
@@ -44,6 +45,7 @@ class TeamIndex extends React.Component {
         <div className="new-team-modal">
           <p>+</p>
         </div>
+        <div className="team-separator"></div>
       </div>
     );
   }

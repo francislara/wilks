@@ -1,17 +1,32 @@
 import React from 'react';
 
-const TeamIndexItem = ({ team }) => {
-  let name = team.name;
-  let imgUrl = team.img_url;
-  if (!imgUrl) {
-    return (
-      <div className="team-index-item">
-        <p className="default-team-image">
-          {name.toUpperCase().slice(0,1)}
-        </p>
-      </div>
-    );
+class TeamIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: props.team.name,
+      imgUrl: props.team.img_url,
+      key: props.keys
+    };
+
   }
-};
+ 
+  render() {
+    if (!this.state.imgUrl) {
+      return (
+        <div className="team-index-item">
+          <div className="default-team-image">
+            <p>
+              {this.state.name.toUpperCase().slice(0, 1)}
+            </p>
+          </div>
+        </div>
+      );
+    } 
+  }
+
+}
+
+// }
 
 export default TeamIndexItem;

@@ -8,7 +8,7 @@ import { AuthRoute, ProtectedRoute, HomeRoute } from '../utils/route_util';
 import Favicon from 'react-favicon';
 
 const App = () => (
-  <div>
+  <div className="app-container">
     <Favicon url="https://res.cloudinary.com/lara-cloud1/image/upload/v1511690023/favicon_gkzh2k.png" />
     <Switch>
       <AuthRoute path="/register" component={RegisterContainer} />
