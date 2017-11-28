@@ -17,10 +17,12 @@ class Register extends React.Component {
 
   componentDidMount() {
     document.body.classList.add('background-image');
+    $('.app-container').removeClass('display-flex');
   }
 
   componentWillUnmount() {
     document.body.classList.remove('background-image');
+    $('.app-container').addClass('display-flex');
   }
 
   handleInput(type) {
