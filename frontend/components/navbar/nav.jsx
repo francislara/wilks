@@ -68,7 +68,13 @@ class Nav extends React.Component {
   render() {
     return (
       <div className="nav-bar">
-        <div className="nav-user"><img src={this.state.img_url} /> <p>{this.state.username}</p></div><div onClick={this.openModal} className="nav-modal"><i className="fa fa-cog" aria-hidden="true"></i></div>
+        <div className="nav-user">
+         <img src={this.state.img_url} /> 
+         <p>{this.state.username}</p>
+        </div>
+        <div onClick={this.openModal} className="nav-modal">
+          <i className="fa fa-cog" aria-hidden="true"></i>
+        </div>
         <Modal 
           isOpen={this.state.modalOpen} 
           style={customStyles}

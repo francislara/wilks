@@ -1,1 +1,1 @@
-json.extract! team, :id, :owner_id, :name, :description, :img_url
+json.extract! team, :id, :owner_id, :name, :img_url
