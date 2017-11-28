@@ -31,6 +31,7 @@ class CreateModal extends React.Component {
       <div className="create-modal-container">
         <h2>Create a Team</h2>
         <form>
+          <label>Name</label>
           <input
             type="text"
             value={this.state.name}

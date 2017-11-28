@@ -31,6 +31,7 @@ class JoinModal extends React.Component {
       <div className="join-modal-container">
         <h2>Join a Team</h2>
         <form>
+          <label>Team ID</label>
           <input 
             type="text" 
             value={this.state.id}

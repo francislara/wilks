@@ -1,0 +1,39 @@
+.team-modal-container {
+  width: 472px;
+  height: 360px;
+  h2 {
+    font-family: 'Francois One', sans-serif;
+    text-align: center;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: white;
+  }
+}
+
+.create-join-container {
+  display: flex;
+  justify-content: space-between;
+
+  .team-modal-create {
+    width: 206px;
+    height: 268px;
+    padding: 10px;
+    border: 1px solid rgb(40, 43, 48);
+    border-radius: 4px;
+    box-shadow: 0px 0px 15px rgba(40, 43, 48, .75);
+    background: rgba(255, 255, 255, 0.05)
+  }
+
+  .team-modal-join {
+    width: 206px;
+    height: 268px;
+    padding: 10px;
+    border: 1px solid rgb(40, 43, 48);
+    border-radius: 4px;
+    box-shadow: 0px 0px 15px rgba(40, 43, 48, .75);
+    background: rgba(255, 255, 255, 0.05)
+  }
+}
+
