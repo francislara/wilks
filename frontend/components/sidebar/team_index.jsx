@@ -114,9 +114,8 @@ class TeamIndex extends React.Component {
           this.state.team_keys.map(key => {
             if(this.state.teams[key]){
               return (
-                <NavLink to={`/teams/${this.state.teams[key].id}`}>
+                <NavLink key={key} to={`/teams/${key}`}>
                   <TeamIndexItem 
-                    key={key} 
                     keys={key} 
                     team={this.state.teams[key]} />
                 </NavLink>

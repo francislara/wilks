@@ -90,7 +90,19 @@
 
 .active {
   .default-team-image, .friends-button {
+    position: relative;
     border-radius: 14px;
     background: #7289da;
+  }
+
+  .default-team-image:before {
+    background: white;
+    border-radius: 20px;
+    content: " ";
+    height: 40px;
+    margin-left: -37px;
+    position: fixed;
+    width: 10px;
+    display: inline-block;
   }
 }

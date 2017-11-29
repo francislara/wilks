@@ -27,6 +27,4 @@ class TeamIndexItem extends React.Component {
 
 }
 
-// }
-
 export default TeamIndexItem;
