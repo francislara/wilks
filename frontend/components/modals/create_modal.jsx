@@ -29,16 +29,28 @@ class CreateModal extends React.Component {
   render() {
     return (
       <div className="create-modal-container">
-        <h2>Create a Team</h2>
+        
+        <div>
+          <h2>Create a Team</h2>
+          <p>By creating a team, you will be able to chat amongst your friends for free!</p>  
+        </div>
         <form>
-          <label>Name</label>
-          <input
-            type="text"
-            value={this.state.name}
-            onChange={this.handleInput()} />
-          <button onClick={this.handleSubmit}>Create</button>
+          <label>Team Name
+            <input
+              type="text"
+              value={this.state.name}
+              onChange={this.handleInput()} />
+          </label>
         </form>
-        <div onClick={this.props.openMainModal}>Back</div>
+        <div className="modal-footer">
+        
+          <div 
+            className="back-button" 
+            onClick={this.props.openMainModal}>
+            <i className="fa fa-arrow-left" aria-hidden="true"></i>  <p>Back</p>
+          </div>
+          <button onClick={this.handleSubmit}>Create</button>
+        </div>
       </div>
     );
   }

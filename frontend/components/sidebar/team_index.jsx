@@ -5,6 +5,7 @@ import TeamModal from '../modals/team_modal';
 import CreateModal from '../modals/create_modal';
 import JoinModalContainer from '../modals/join_modal_container';
 import ScrollArea from 'react-scrollbar';
+import { NavLink } from 'react-router-dom';
 
 const customStyles = {
   overlay: {
@@ -103,18 +104,22 @@ class TeamIndex extends React.Component {
         verticalContainerStyle={scrollBarStyle}
         verticalScrollbarStyle={scrollBarStyle}
         >
-        <div className="friends-button">
-          <i className="fa fa-users" aria-hidden="true"></i>
-        </div>
+        <NavLink to='/teams/@me'>
+          <div className="friends-button">
+            <i className="fa fa-users" aria-hidden="true"></i>
+          </div>
+        </NavLink>
         <div className="team-separator"></div>
         {
           this.state.team_keys.map(key => {
             if(this.state.teams[key]){
               return (
-                <TeamIndexItem 
-                  key={key} 
-                  keys={key} 
-                  team={this.state.teams[key]} />
+                <NavLink to={`/teams/${this.state.teams[key].id}`}>
+                  <TeamIndexItem 
+                    key={key} 
+                    keys={key} 
+                    team={this.state.teams[key]} />
+                </NavLink>
               );    
             }
           })

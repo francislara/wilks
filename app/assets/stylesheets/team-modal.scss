@@ -8,7 +8,7 @@
     text-transform: uppercase;
     font-weight: 900;
     margin-bottom: 30px;
-    color: white;
+    color: #c0c0c0;
   }
 }
 
@@ -17,23 +17,205 @@
   justify-content: space-between;
 
   .team-modal-create {
+    display: flex;
     width: 206px;
     height: 268px;
     padding: 10px;
     border: 1px solid rgb(40, 43, 48);
     border-radius: 4px;
     box-shadow: 0px 0px 15px rgba(40, 43, 48, .75);
-    background: rgba(255, 255, 255, 0.05)
+    background: rgba(255, 255, 255, 0.05);
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    
+
+    h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      color: #7289da;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-family: 'Roboto', sans-serif;
+      color: #99aab5;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 3px;
+      color: white;
+      background-color: #7289da;
+      border: 0;
+      -webkit-transition: background-color .2s;
+      transition: background-color .2s;
+    }
+
+    button:hover {
+      background-color: #697ec4;
+    }
   }
 
   .team-modal-join {
+    display: flex;
     width: 206px;
     height: 268px;
     padding: 10px;
     border: 1px solid rgb(40, 43, 48);
     border-radius: 4px;
     box-shadow: 0px 0px 15px rgba(40, 43, 48, .75);
-    background: rgba(255, 255, 255, 0.05)
+    background: rgba(255, 255, 255, 0.05);
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      color: #3ca374;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-family: 'Roboto', sans-serif;
+      color: #99aab5;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 3px;
+      color: white;
+      background-color: #43b581;
+      border: 0;
+      -webkit-transition: background-color .2s;
+      transition: background-color .2s;
+    }
+
+    button:hover {
+      background-color: #3ca374;
+    }
   }
 }
 
+.create-modal-container, .join-modal-container {
+  width: 472px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  h2 {
+    font-family: 'Francois One', sans-serif;
+    text-align: center;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: #7289da;
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    color: #99aab5;
+    font-size: 14px;
+  }
+
+  label {
+    font-family: 'Francois One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+    color: #87909c;
+    font-size: 12px;
+    font-weight: 900;
+    .red {
+      color: #f04747;
+    }
+    p {
+      display: inline-block;
+      margin-top: 0;
+    }
+  }
+
+  input {
+    display: block;
+    height: 34px;
+    padding: 1px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background: transparent; // background-color: rgb(250, 255, 189);
+    border: 0;
+    color: white;
+    font-size: 16px;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+  }
+
+  input:focus {
+    border-bottom: 2px solid white;
+    outline: none;
+    margin-bottom: 11px;
+  }
+
+  .modal-footer {
+    display: flex;
+    width: 440px;
+    height: 36px;
+    padding: 20px 18px;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    p, i {
+      margin-top: 10px;
+      display: inline-block;
+      color: #99aab5;
+    }
+
+    .back-button {
+      padding-bottom: 10px;
+    }
+
+    .back-button:hover {
+      border-bottom: 2px solid #949494;
+      padding-bottom: 8px;
+    }
+
+    button {
+      width: 81.156px;
+      padding: 10px 20px;
+      border-radius: 3px;
+      color: white;
+      background-color: #7289da;
+      border: 0;
+      -webkit-transition: background-color .2s;
+      transition: background-color .2s;
+    }
+
+    button:hover {
+      background-color: #697ec4;
+    }
+
+    .join-button {
+      background-color: #43b581;
+    }
+
+    .join-button:hover {
+      background-color: #3ca374;
+    }
+
+  }
+
+}

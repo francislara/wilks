@@ -29,16 +29,27 @@ class JoinModal extends React.Component {
   render() {
     return (
       <div className="join-modal-container">
-        <h2>Join a Team</h2>
+        <div>
+          <h2>Join a Team</h2>
+          <p>Enter a Team ID below to join a team! Once you join you will be able to chat with any other members of that team.</p>
+        </div>
         <form>
-          <label>Team ID</label>
-          <input 
-            type="text" 
-            value={this.state.id}
-            onChange={this.handleInput()} />
-          <button onClick={this.handleSubmit}>Join</button>
+          <label>Team ID
+            <input
+              type="text"
+              value={this.state.id}
+              onChange={this.handleInput()} />
+          </label>
         </form>
-        <div onClick={this.props.openMainModal}>Back</div>
+        <div className="modal-footer">
+
+          <div
+            className="back-button"
+            onClick={this.props.openMainModal}>
+            <i className="fa fa-arrow-left" aria-hidden="true"></i>  <p>Back</p>
+          </div>
+          <button className="join-button" onClick={this.handleSubmit}>Join</button>
+        </div>
       </div>
     );
   }

@@ -87,3 +87,10 @@
     color: white;
   }
 }
+
+.active {
+  .default-team-image, .friends-button {
+    border-radius: 14px;
+    background: #7289da;
+  }
+}

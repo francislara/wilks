@@ -10,7 +10,7 @@ const Auth = ({ component: Component, path, loggedIn }) => (
   <Route
     path={path}
     render={props => (
-      loggedIn ? <Redirect to="/teams" /> : <Component {...props} />
+      loggedIn ? <Redirect to="/teams/@me" /> : <Component {...props} />
     )}
   />
 );
@@ -28,7 +28,7 @@ const Home = ({ component: Component, path, loggedIn }) => (
   <Route
     exact path={path}
     render={props => (
-      loggedIn ? <Redirect to="/teams" /> : <Redirect to="/login" />
+      loggedIn ? <Redirect to="/teams/@me" /> : <Redirect to="/login" />
     )}
   />
 );
