@@ -4,6 +4,7 @@ import TeamIndexItem from './team_index_item';
 import TeamModal from '../modals/team_modal';
 import CreateModal from '../modals/create_modal';
 import JoinModalContainer from '../modals/join_modal_container';
+import ScrollArea from 'react-scrollbar';
 
 const customStyles = {
   overlay: {
@@ -24,6 +25,10 @@ const customStyles = {
     backgroundColor: '#2f3136',
     border: 0
   }
+};
+
+const scrollBarStyle = {
+  width: 0
 };
 
 class TeamIndex extends React.Component {
@@ -92,6 +97,12 @@ class TeamIndex extends React.Component {
   render() {
     return (
       <div className="sidebar-scroller">
+      <ScrollArea
+        speed={0.8}
+        horizontal={false}
+        verticalContainerStyle={scrollBarStyle}
+        verticalScrollbarStyle={scrollBarStyle}
+        >
         <div className="friends-button">
           <i className="fa fa-users" aria-hidden="true"></i>
         </div>
@@ -141,9 +152,11 @@ class TeamIndex extends React.Component {
             closeModal={this.closeModal}
             openMainModal={this.openMainModal} />
         </Modal>
+          
+    </ScrollArea>
 
 
-      </div>
+     </div>
     );
   }
 }
