@@ -22,6 +22,7 @@ class Login extends React.Component {
   componentWillUnmount() {
     document.body.classList.remove('background-image');
     $('.app-container').addClass('display-flex');
+    this.props.clearSessionErrors();
   }
 
   handleInput(type) {

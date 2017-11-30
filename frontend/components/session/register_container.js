@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { register, login } from '../../actions/session';
+import { register, login, clearSessionErrors } from '../../actions/session';
 import Register from './register';
 import Login from './login';
 
@@ -9,7 +9,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   register: formUser => dispatch(register(formUser)),
-  login: formUser => dispatch(login(formUser))
+  login: formUser => dispatch(login(formUser)),
+  clearSessionErrors: () => dispatch(clearSessionErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);
