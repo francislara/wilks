@@ -50,7 +50,7 @@
   }
 
   .team-id {
-    cursor: pointer;
+    cursor: default;
     color: #7289da;
     font-family: 'Roboto', sans-serif;
   }
@@ -75,4 +75,63 @@
 
 .hidden {
   display: none;
+}
+
+.leave-team-modal {
+  width: 400px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  strong {
+    font-weight: 600;
+  }
+
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #f6f6f7;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    color: #f6f6f7;
+    font-size: 15px;
+    font-weight: 100;
+  }
+}
+
+.leave-modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  button {
+    margin-left: 30px;
+    width: 106.891px;
+    height: 38px;
+    padding: 0;
+    border: 0;
+    border-radius: 3px;
+    color: white;
+    background-color: #f04747;
+  }
+
+  button:hover {
+    background-color: #d84040;
+  }
+
+  .cancel-button {
+    cursor: pointer;
+  }
+
+  .cancel-button:hover {
+    border-bottom: 1px solid #f6f6f7;
+    margin-bottom: -1px;
+  }
 }

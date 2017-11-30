@@ -22,13 +22,17 @@ class LeaveTeamModal extends React.Component {
   render() {
     
     return (
-      <div className="leaveTeamModal">
-        <h2>Leave '{this.teamName}' ?</h2>
-        <p>Are you sure you want to leave <strong>{this.teamName}</strong></p>
-        <p>Cancel</p> 
-        <Link to='@me'>
-          <button onClick={this.handleLeave}>Leave Team</button>
-        </Link>
+      <div className="leave-team-modal">
+        <h2>Leave '{this.teamName}'</h2>
+        <p>Are you sure you want to leave <strong>{this.teamName}</strong>? You will have to enter the team's ID to join again.</p>
+        <div className="leave-modal-footer">
+          <p
+            onClick={this.closeModal} 
+            className="cancel-button">Cancel</p> 
+          <Link to='@me'>
+            <button onClick={this.handleLeave}>Leave Team</button>
+          </Link>
+        </div>
       </div>
     );
   }
