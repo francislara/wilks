@@ -32,17 +32,10 @@ class Nav extends React.Component {
       img_url: this.props.user.img_url
     };
 
-    // this.handleClick = this.handleClick.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
-
-  // handleClick(e) {
-  //   e.preventDefault();
-  //   this.openModal();
-  //   // this.props.logout();
-  // }
 
   openModal() {
     this.setState({

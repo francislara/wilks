@@ -3,6 +3,7 @@ import RegisterContainer from './session/register_container';
 import LoginContainer from './session/login_container';
 import NavContainer from './navbar/nav_container';
 import TeamIndexContainer from './sidebar/team_index_container';
+import HeaderContainer from './team/header_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute, HomeRoute } from '../utils/route_util';
 import Favicon from 'react-favicon';
@@ -16,6 +17,7 @@ const App = () => (
       <HomeRoute path="/" />
     </Switch>
     <ProtectedRoute path="/teams" component={TeamIndexContainer} />
+    <Route exact path="/teams/:teamId" component={HeaderContainer}/>
     <ProtectedRoute path="/teams" component={NavContainer} />
   </div>
 );

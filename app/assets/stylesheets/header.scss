@@ -1,0 +1,78 @@
+.team-header {
+  display: flex;
+  height: 48px;
+  width: 212px;
+  padding: 0 16px 0 12px;
+  background: #303236;
+  border-radius: 3px 0 0 0;
+  // border-bottom: 2px solid #202427;
+  // box-shadow: inset 0px -1px 0px 0px #202427,
+  // 0px 1px 5px  #202427;
+  box-shadow: 0 1px 0 #202427,
+  0 2px 0 rgba(0, 0, 0, .06);
+  z-index: 2;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
+  cursor: pointer;
+  transition: all .1s ease-in;
+  position: relative;
+
+  h2 {
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+.team-header:hover {
+  background: #2a2c30;
+}
+
+.header-dropdown {
+  width: 188px;
+  padding: 10px 14px;
+  background: rgb(238, 238, 238);
+  border-radius: 4px;
+  position: absolute;
+  top: 55px;
+  left: 85px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .16);
+  color: black;
+
+  .leave-team-button {
+    cursor: pointer;
+    color: #f04747;
+    font-family: 'Roboto', sans-serif;
+
+    i {
+      color: #9099a3;
+    }
+  }
+
+  .team-id {
+    cursor: pointer;
+    color: #7289da;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .team-id:hover {
+    color: #697ec4
+  }
+  
+  .dropdown-separator {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+    border-bottom: 1px solid #99aab5;
+  }
+
+  .leave-team-button:hover {
+    i {
+      color: #737f8d;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
