@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import LeaveTeamModalContainer from '../modals/leave_team_modal_container';
 // import enhanceWithClickOutside from 'react-click-outside';
 
 const customStyles = {
@@ -78,7 +79,9 @@ class HeaderDropdown extends React.Component {
           isOpen={this.state.modalOpen}
           style={customStyles}
           onRequestClose={this.closeModal}>
-          <div></div>
+          <LeaveTeamModalContainer 
+            closeModal={this.closeModal}
+            teamId={this.props.teamId} />
         </Modal>
       </div>
     );
