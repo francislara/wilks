@@ -27,7 +27,7 @@ class LeaveTeamModal extends React.Component {
         <p>Are you sure you want to leave <strong>{this.teamName}</strong>? You will have to enter the team's ID to join again.</p>
         <div className="leave-modal-footer">
           <p
-            onClick={this.closeModal} 
+            onClick={this.props.closeModal} 
             className="cancel-button">Cancel</p> 
           <Link to='@me'>
             <button onClick={this.handleLeave}>Leave Team</button>
