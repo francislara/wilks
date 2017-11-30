@@ -10,7 +10,7 @@ const _defaultState = {};
 
 const teamsReducer = (state = _defaultState, action) => {
   Object.freeze(state);
-  let newState;
+  let newState, channelId, teamId;
   switch(action.type) {
     case RECEIVE_TEAM:
       return merge({}, state, action.team);
@@ -23,13 +23,16 @@ const teamsReducer = (state = _defaultState, action) => {
       return newState;
     case RECEIVE_CHANNEL:
       newState = merge({}, state);
-      newState[action.channel.team_id].channels.push(parseInt(Object.keys(action.channel)[0]));
+      channelId = parseInt(Object.keys(action.channel)[0]);
+      teamId = parseInt(action.channel[channelId].team_id);
+      newState[teamId].channels.push(channelId);
       return newState;
     case REMOVE_CHANNEL:
       newState = merge({}, state);
-      let id = parseInt(Object.keys(action.channel)[0]);
-      let idx = newState[action.channel.team_id].channels.indexOf(id);
-      newState[action.channel.team_id].channels.splice(idx, 1);
+      channelId = parseInt(Object.keys(action.channel)[0]);
+      teamId = parseInt(action.channel[channelId].team_id);
+      let idx = newState[teamId].channels.indexOf(channelId);
+      newState[teamId].channels.splice(idx, 1);
       return newState;
     default:
       return state;

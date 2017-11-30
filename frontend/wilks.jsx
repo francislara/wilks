@@ -5,13 +5,10 @@ import configureStore from './store/store';
 
 //TESTING ONLY REMOVE WHEN DONE
 import { 
-  createTeam, 
-  getTeamsIndex, 
-  deleteTeam, 
-  updateTeam, 
-  joinTeam, 
-  leaveTeam 
-} from './actions/teams';
+  createChannel, 
+  getChannelsIndex, 
+  deleteChannel, 
+} from './actions/channels';
 //TESTING ONLY REMOVE WHEN DONE
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,12 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
   //TESTING ONLY REMOVE WHEN DONE
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.joinTeam = joinTeam;
-  window.leaveTeam = leaveTeam;
-  window.createTeam = createTeam;
-  window.deleteTeam = deleteTeam;
-  window.getTeamsIndex = getTeamsIndex;
-  window.updateTeam = updateTeam;
+  window.createChannel = createChannel;
+  window.deleteChannel = deleteChannel;
+  window.getChannelsIndex = getChannelsIndex;
   //TESTING ONLY REMOVE WHEN DONE
   
   ReactDOM.render(<Root store={store} />, root);
