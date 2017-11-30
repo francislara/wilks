@@ -44,7 +44,7 @@ class Header extends React.Component {
                 <i className="fa fa-chevron-down" aria-hidden="true"></i>
             }
           </div>
-          <HeaderDropdownContainer teamId={teamId}/>
+          <HeaderDropdownContainer toggleDropdown={this.toggleDropdown} teamId={teamId}/>
         </div>
       );
     } else {

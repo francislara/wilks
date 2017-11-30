@@ -81,7 +81,8 @@ class HeaderDropdown extends React.Component {
           onRequestClose={this.closeModal}>
           <LeaveTeamModalContainer 
             closeModal={this.closeModal}
-            teamId={this.props.teamId} />
+            teamId={this.props.teamId}
+            toggleDropdown={this.props.toggleDropdown} />
         </Modal>
       </div>
     );

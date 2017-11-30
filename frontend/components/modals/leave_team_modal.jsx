@@ -15,13 +15,14 @@ class LeaveTeamModal extends React.Component {
   handleLeave() {
     this.props.leaveTeam(this.props.teamId);
     this.props.closeModal();
+    this.props.toggleDropdown();
   }
   
   
   render() {
     
     return (
-      <div>
+      <div className="leaveTeamModal">
         <h2>Leave '{this.teamName}' ?</h2>
         <p>Are you sure you want to leave <strong>{this.teamName}</strong></p>
         <p>Cancel</p> 
