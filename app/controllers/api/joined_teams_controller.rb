@@ -33,7 +33,7 @@ class Api::JoinedTeamsController < ApplicationController
 
   def index
     joined_team_ids = current_user.joined_teams.pluck(:team_id)
-    @joined_teams = Team.where('id IN (?)', joined_team_ids)
+    @joined_teams = Team.where('id IN (?)', joined_team_ids).includes(:channels)
     render :index
   end
 
