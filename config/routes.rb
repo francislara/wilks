@@ -6,10 +6,10 @@ Rails.application.routes.draw do
     resources :teams, only: %i(create show update destroy) do
       resources :joined_teams, only: %i(create)
       resource :joined_team, only: %i(destroy)
-      resources :channels, only: %i(index create)
+      resources :channels, only: %i(index)
     end
     resources :joined_teams, only: %i(index)
-    resources :channels, only: %i(destroy show)
+    resources :channels, only: %i(destroy show create)
   end
 
   root to: 'root#root'

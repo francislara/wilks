@@ -1,7 +1,6 @@
 class Api::ChannelsController < ApplicationController
   def create
     @channel = Channel.new(channel_params)
-    @channel.team_id = params[:team_id]
 
     if @channel.save
       render :show
@@ -40,7 +39,7 @@ class Api::ChannelsController < ApplicationController
   end
 
   def channel_params
-    params.require(:channel).permit(:name, :description)
+    params.require(:channel).permit(:name, :description, :team_id)
   end
 
 end
