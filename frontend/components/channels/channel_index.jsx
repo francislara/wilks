@@ -53,7 +53,7 @@ class ChannelIndex extends React.Component {
           channelKeys.map(key => {
             // console.log(this.state.channel_keys);
             return (
-              <NavLink key={`${teamId}/${key}`} to={`${key}`}>
+              <NavLink key={`${teamId}/${key}`} to={`/teams/${teamId}/${key}`}>
                 <ChannelIndexItem
                   keys={key}
                   channel={this.props.channels[key]} />

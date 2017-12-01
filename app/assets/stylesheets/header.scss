@@ -50,14 +50,40 @@
     }
   }
 
+  .create-channel-button {
+    font-family: 'Roboto', sans-serif;
+    color: #43b581;
+    cursor: pointer;
+
+    i {
+      color: #9099a3;
+    }
+  }
+
+  .create-channel-button:hover {
+    color: #248d5c;
+
+    i {
+      color: #737f8d;
+    }
+  }
+
   .team-id {
     cursor: default;
     color: #7289da;
     font-family: 'Roboto', sans-serif;
+    
+    i {
+      color: #9099a3;
+    }
   }
 
   .team-id:hover {
-    color: #697ec4
+    color: #697ec4;
+
+    i {
+      color: #737f8d;
+    }
   }
   
   .dropdown-separator {
@@ -103,6 +129,98 @@
     color: #f6f6f7;
     font-size: 15px;
     font-weight: 100;
+  }
+}
+
+.create-channel-modal {
+  width: 400px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  strong {
+    font-weight: 600;
+  }
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #f6f6f7;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  p {
+    font-family: 'Roboto', sans-serif;
+    color: #f6f6f7;
+    font-size: 15px;
+    font-weight: 100;
+  }
+}
+
+.channel-modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  button {
+    margin-left: 30px;
+    width: 106.891px;
+    height: 38px;
+    padding: 0;
+    border: 0;
+    border-radius: 3px;
+    color: white;
+    background-color: #43b581;
+  }
+  button:hover {
+    background-color: #248d5c;
+  }
+  .cancel-button {
+    cursor: pointer;
+  }
+  .cancel-button:hover {
+    border-bottom: 1px solid #f6f6f7;
+    margin-bottom: -1px;
+  }
+}
+
+.create-channel-form {
+  label {
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+    color: #87909c;
+    font-size: 12px;
+    font-weight: 900;
+    .red {
+      color: #f04747;
+    }
+    p {
+      display: inline-block;
+      margin-top: 0;
+    }
+  }
+
+  input {
+    display: block;
+    height: 34px;
+    padding: 1px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background: transparent; // background-color: rgb(250, 255, 189);
+    border: 0;
+    color: white;
+    font-size: 16px;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+  }
+
+  input:focus {
+    border-bottom: 2px solid white;
+    outline: none;
+    margin-bottom: 11px;
   }
 }
 

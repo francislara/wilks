@@ -116,7 +116,7 @@
   text-align: center;
 
   h2 {
-    font-family: 'Francois One', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
     letter-spacing: .4px;
     text-transform: uppercase;
@@ -132,7 +132,7 @@
   }
 
   label {
-    font-family: 'Francois One', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     display: flex;
     flex-direction: column;
     align-content: space-around;
@@ -186,6 +186,7 @@
 
     .back-button {
       padding-bottom: 10px;
+      cursor: pointer;
     }
 
     .back-button:hover {
@@ -217,5 +218,15 @@
     }
 
   }
+  
+  .join-team-header {
+    color: #43b581;
+  }
 
+}
+
+
+
+button {
+  cursor: pointer;
 }

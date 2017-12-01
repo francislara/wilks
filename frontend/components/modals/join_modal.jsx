@@ -30,7 +30,7 @@ class JoinModal extends React.Component {
     return (
       <div className="join-modal-container">
         <div>
-          <h2>Join a Team</h2>
+          <h2 className="join-team-header">Join a Team</h2>
           <p>Enter a Team ID below to join a team! Once you join you will be able to chat with any other members of that team.</p>
         </div>
         <form>

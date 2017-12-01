@@ -2,6 +2,7 @@
   width: 240px;
   height: calc(100vh - 100px);
   background: #303236;
+  display: flex;
 }
 
 .channel-item {
@@ -19,6 +20,20 @@
     text-decoration: none;
     color: #72767d;
     margin-right: 5px;
+  }
+  overflow: hidden;
+
+  
+}
+
+.active {
+
+  .channel-item {
+    background: rgba(79, 84, 92, .6);
+  }
+
+  .channel-name {
+    color: #f6f6f7;
   }
 }
 

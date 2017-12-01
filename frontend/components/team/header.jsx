@@ -13,13 +13,13 @@ class Header extends React.Component {
     this.toggleDropdown = this.toggleDropdown.bind(this);
   }
   
-  componentWillMount() {
-    // console.log('h');
-    // return(
+  // componentWillMount() {
+  //   // console.log('h');
+  //   // return(
 
       
-    // );
-  }
+  //   // );
+  // }
 
   toggleDropdown() {
     var classList = document.getElementById('header-dropdown').className.split(/\s+/);

@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import LeaveTeamModalContainer from '../modals/leave_team_modal_container';
+import CreateChannelModalContainer from '../modals/create_channel_modal_container';
 // import enhanceWithClickOutside from 'react-click-outside';
 
 const customStyles = {
@@ -29,13 +30,15 @@ class HeaderDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalOpen: false
+      modalLeaveOpen: false,
+      modalCreateOpen: false
     };
 
 
     this.handleLeave = this.handleLeave.bind(this);
-    this.openModal = this.openModal.bind(this);
+    this.openLeaveModal = this.openLeaveModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.openCreateModal = this.openCreateModal.bind(this);
   }
 
   // removeDropdown() {
@@ -51,15 +54,26 @@ class HeaderDropdown extends React.Component {
     this.props.leaveTeam(this.props.teamId);
   }
 
-  openModal() {
+  openLeaveModal() {
     this.setState({
-      modalOpen: true
+      modalLeaveOpen: true,
+      modalCreateOpen: false
     });
+    this.props.toggleDropdown();
+  }
+
+  openCreateModal() {
+    this.setState({
+      modalCreateOpen: true,
+      modalLeaveOpen: false,
+    });
+    this.props.toggleDropdown();
   }
 
   closeModal() {
     this.setState({
-      modalOpen: false,
+      modalLeaveOpen: false,
+      modalCreateOpen: false
     });
   }
 
@@ -70,16 +84,31 @@ class HeaderDropdown extends React.Component {
           <p className="team-id"><i className="fa fa-id-card" aria-hidden="true"></i> Team ID: {this.props.teamId}</p>
           <p className="dropdown-separator"> </p>
           <p 
+            className="create-channel-button"
+            onClick={this.openCreateModal}>
+            <i className="fa fa-plus-square" aria-hidden="true"></i> Create Channel</p>
+          <p className="dropdown-separator"> </p>
+          <p 
             className="leave-team-button"
-            onClick={this.openModal}
+            onClick={this.openLeaveModal}
             >
             <i className="fa fa-sign-out" aria-hidden="true"></i> Leave Team</p>
         </div>
         <Modal
-          isOpen={this.state.modalOpen}
+          isOpen={this.state.modalLeaveOpen}
           style={customStyles}
           onRequestClose={this.closeModal}>
           <LeaveTeamModalContainer 
+            closeModal={this.closeModal}
+            teamId={this.props.teamId}
+            toggleDropdown={this.props.toggleDropdown} />
+        </Modal>
+
+        <Modal
+          isOpen={this.state.modalCreateOpen}
+          style={customStyles}
+          onRequestClose={this.closeModal}>
+          <CreateChannelModalContainer
             closeModal={this.closeModal}
             teamId={this.props.teamId}
             toggleDropdown={this.props.toggleDropdown} />
