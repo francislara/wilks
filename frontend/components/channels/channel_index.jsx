@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import ChannelIndexItemContainer from './channel_index_item_container';
 import ChannelIndexItem from './channel_index_item';
 import ScrollArea from 'react-scrollbar';
 import { NavLink } from 'react-router-dom';
@@ -53,10 +54,14 @@ class ChannelIndex extends React.Component {
           channelKeys.map(key => {
             // console.log(this.state.channel_keys);
             return (
-              <NavLink key={`${teamId}/${key}`} to={`/teams/${teamId}/${key}`}>
+              <NavLink 
+                key={`${teamId}/${key}`} 
+                to={`/teams/${teamId}/${key}`}
+                id={`channel-navlink-${key}`}>
                 <ChannelIndexItem
                   keys={key}
-                  channel={this.props.channels[key]} />
+                  channel={this.props.channels[key]} 
+                  userId={this.props.user_id}/>
               </NavLink>
             );
           })

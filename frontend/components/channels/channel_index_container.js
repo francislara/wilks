@@ -4,7 +4,8 @@ import ChannelIndex from './channel_index';
 
 const mapStateToProps = state => ({
   channels: state.entities.channels,
-  teams: state.entities.teams
+  teams: state.entities.teams,
+  user_id: state.session.currentUser.id
 });
 
 const mapDispatchToProps = dispatch => ({

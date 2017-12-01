@@ -5,6 +5,19 @@
   display: flex;
 }
 
+.channel-name-container {
+    display: flex;
+    align-items: center;
+    width: 193px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.channel-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .channel-item {
   width: 208px;
   height: 32px;
@@ -47,4 +60,13 @@
 
 .lazy-padding {
   height: 16px;
+}
+
+.delete-channel {
+  text-decoration: none;
+  color: #72767d;
+}
+
+.delete-channel:hover {
+  color: #d84040;
 }
