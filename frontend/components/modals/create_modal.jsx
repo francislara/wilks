@@ -39,7 +39,8 @@ class CreateModal extends React.Component {
             <input
               type="text"
               value={this.state.name}
-              onChange={this.handleInput()} />
+              onChange={this.handleInput()}
+              placeholder="Enter a team name." />
           </label>
         </form>
         <div className="modal-footer">

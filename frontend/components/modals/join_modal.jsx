@@ -38,7 +38,8 @@ class JoinModal extends React.Component {
             <input
               type="text"
               value={this.state.id}
-              onChange={this.handleInput()} />
+              onChange={this.handleInput()}
+              placeholder="Enter a team ID." />
           </label>
         </form>
         <div className="modal-footer">

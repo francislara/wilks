@@ -40,7 +40,8 @@ class CreateChannelModal extends React.Component {
             <input
               type="text"
               value={this.state.name}
-              onChange={this.handleInput()} />
+              onChange={this.handleInput()}
+              placeholder="Enter a channel name." />
           </label>
         </form>
         <div className="channel-modal-footer">

@@ -1,0 +1,49 @@
+.message-index {
+  width: calc(100vw - 554px);
+  height: calc(100vh - 48px);
+  background: #36393f;
+
+  .message-scrollarea {
+    width: calc(100vw - 554px);
+    height: calc(100% - 94px);
+  }
+
+  form {
+    display: flex;
+    width: calc(100vw - 554px);
+    height: 94px;
+    margin: 0 20px;
+    align-items: center;
+    
+    .input-container {
+      display: flex;
+      background: hsla(218, 5%, 47%, .3);
+      border: 0;
+      width: calc(100% - 40px);
+      height: 44px;
+      border-radius: 5px;
+    }
+
+    input {
+      width: calc(100% - 20px);
+      height: 44px;
+      background: none;
+      border: 0;
+      color: #f6f6f7;
+    }
+
+    input::placeholder {
+      color: #6f7b74;
+    }
+
+    
+    .message-padding {
+      width: 20px;
+      height: 44px;
+    }
+  }
+}
+
+*:focus {
+outline: none;
+}
