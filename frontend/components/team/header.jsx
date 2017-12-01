@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderDropdownContainer from './header_dropdown_container';
 import { Redirect } from 'react-router-dom';
-
+import enhanceWithClickOutside from 'react-click-outside';
 
 
 class Header extends React.Component {
@@ -11,23 +11,51 @@ class Header extends React.Component {
       dropdownOpen: false
     };
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    // this.removeDropdown = this.removeDropdown.bind(this);
   }
   
   toggleDropdown() {
-    var classList = document.getElementById('header-dropdown').className.split(/\s+/);
-   
-    if(classList.includes('hidden')) {
-      $('.header-dropdown').removeClass('hidden');
-      this.setState({
-        dropdownOpen: true
-      });
-    } else {
-      $('.header-dropdown').addClass('hidden');
-      this.setState({
-        dropdownOpen: false
-      });
-    }
+    // var classList = document.getElementById('header-dropdown').className.split(/\s+/);
+    // if(classList.includes('reallyhidden'))
+    // {
+    //   $('.header-dropdown').removeClass('reallyhidden');
+
+    // } else {
+      
+      if(this.state.dropdownOpen) {
+        console.log('goodbye');
+        $('.header-dropdown').addClass('hidden');
+        this.setState({
+          dropdownOpen: false
+        });
+      } else {
+        console.log('hello');
+        $('.header-dropdown').removeClass('hidden');
+        this.setState({
+          dropdownOpen: true
+        });
+      }
+    // }
   }
+
+    handleClickOutside() {
+      if(this.state.dropdownOpen) {
+        this.toggleDropdown();
+
+      }
+    }
+
+  // removeDropdown() {
+  //   if(this.state.dropdownOpen) {
+
+  //   } else {
+  //     $('.header-dropdown').addClass('hidden');
+  //     this.setState({
+  //       dropdownOpen: false
+  //     });
+
+  //   }
+  // }
   
   render() {
     const teamId = this.props.match.params.teamId;
@@ -53,7 +81,11 @@ class Header extends React.Component {
                 <i className="fa fa-chevron-down" aria-hidden="true"></i>
             }
           </div>
-          <HeaderDropdownContainer toggleDropdown={this.toggleDropdown} teamId={teamId}/>
+          <HeaderDropdownContainer 
+            toggleDropdown={this.toggleDropdown} 
+            teamId={teamId}
+            // removeDropdown={this.removeDropdown}
+            />
         </div>
       );
     } else {
@@ -71,4 +103,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default enhanceWithClickOutside(Header);

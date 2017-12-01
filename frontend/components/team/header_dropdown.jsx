@@ -42,11 +42,12 @@ class HeaderDropdown extends React.Component {
   }
 
   // removeDropdown() {
+  //   $('.header-dropdown').addClass('reallyhidden');
   //   $('.header-dropdown').addClass('hidden');
   // } 
 
   // handleClickOutside() {
-  //   this.removeDropdown();
+  //   this.props.removeDropdown();
   // }
 
   handleLeave(e) {
@@ -79,7 +80,7 @@ class HeaderDropdown extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="dropdown-container">
         <div id="header-dropdown" className="header-dropdown hidden">
           <p className="team-id"><i className="fa fa-id-card" aria-hidden="true"></i> Team ID: {this.props.teamId}</p>
           <p className="dropdown-separator"> </p>

@@ -35,7 +35,7 @@
   border-radius: 4px;
   position: absolute;
   top: 55px;
-  left: 85px;
+  // left: 85px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .16);
   color: black;
   z-index: 2;
@@ -259,4 +259,12 @@
 
 input::placeholder {
   color: hsla(0, 0%, 100%, .1);
+}
+
+.dropdown-container {
+  position: absolute;
+  width: 216px;
+  height: 160px;
+  top: 0px;
+  left: 82px;
 }
