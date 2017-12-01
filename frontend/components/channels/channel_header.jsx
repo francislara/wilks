@@ -11,7 +11,6 @@ class ChannelHeader extends React.Component {
     // { this.props.channels[channelId].name }
     
     if(this.props.channels[channelId]) {
-      // console.log(this.props.channels[channelId].name);
 
       return (
         <div className="channel-header"> <p>#</p> <p className="channel-name">{this.props.channels[channelId].name}</p> </div>

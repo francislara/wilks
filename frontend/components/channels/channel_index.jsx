@@ -25,10 +25,6 @@ class ChannelIndex extends React.Component {
   //     channel_keys: this.props.teams[this.props.match.params.teamId].channels
   //   });
   //   if (nextProps.channels !== this.props.channels) {
-  //     console.log('this.props');
-  //     console.log(this.props);
-  //     console.log('nextProps');
-  //     console.log(nextProps);
   //     // this.props.getChannelsIndex(this.props.match.params.teamId);
   //     this.setState({
   //       channel_keys: nextProps.teams[nextProps.match.params.teamId].channels
@@ -52,7 +48,6 @@ class ChannelIndex extends React.Component {
         <div className="lazy-padding"></div>
         {
           channelKeys.map(key => {
-            // console.log(this.state.channel_keys);
             return (
               <NavLink 
                 key={`${teamId}/${key}`} 

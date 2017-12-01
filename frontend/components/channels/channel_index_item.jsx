@@ -50,7 +50,6 @@ class ChannelIndexItem extends React.Component {
 
   render() {
     // let classList = document.getElementById(`channel-navlink-${this.props.keys}`).className.split(/\s+/);
-    // console.log(document.getElementById(`channel-navlink-${this.props.keys}`).className);
     // let selected = classList.includes('active');
 
     if(this.props.channel)

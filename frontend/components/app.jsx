@@ -7,6 +7,7 @@ import HeaderContainer from './team/header_container';
 import ChannelIndexContainer from './channels/channel_index_container';
 import ChannelHeaderContainer from './channels/channel_header_container';
 import MessageIndexContainer from './messages/message_index_container';
+import MemberIndexContainer from './members/member_index_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute, HomeRoute } from '../utils/route_util';
 import Favicon from 'react-favicon';
@@ -23,11 +24,24 @@ const App = () => (
     <Route path="/teams/:teamId" component={HeaderContainer}/>
     <Route exact path="/teams/:teamId/:channelId" 
       component={ChannelIndexContainer} />
+    <Route exact path="/teams/@me" render={ () => (
+      <div className="channel-scrollarea"></div>
+    )}/>
     <ProtectedRoute path="/teams" component={NavContainer} />
     <Route exact path="/teams/:teamId/:channelId"
       component={ChannelHeaderContainer} />
-    <Route exact path="/teams/:teamId/:channelId"
-      component={MessageIndexContainer} />
+    <Route exact path="/teams/@me" render={() => (
+      <div className="channel-header"></div>
+    )} />
+      <div className="wrapper">
+      <Route exact path="/teams/:teamId/:channelId"
+        component={MessageIndexContainer} />
+      <Route exact path="/teams/@me" render={() => (
+        <div className="message-index"></div>
+      )} />
+      <Route path="/teams/:teamId" 
+        component={MemberIndexContainer} />
+      </div>
   </div>
 );
 

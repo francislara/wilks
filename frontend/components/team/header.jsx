@@ -23,13 +23,11 @@ class Header extends React.Component {
     // } else {
       
       if(this.state.dropdownOpen) {
-        console.log('goodbye');
         $('.header-dropdown').addClass('hidden');
         this.setState({
           dropdownOpen: false
         });
       } else {
-        console.log('hello');
         $('.header-dropdown').removeClass('hidden');
         this.setState({
           dropdownOpen: true

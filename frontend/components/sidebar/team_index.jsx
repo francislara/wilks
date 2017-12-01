@@ -120,7 +120,6 @@ class TeamIndex extends React.Component {
           this.state.team_keys.map(key => {
             
             if(this.state.teams[key]){
-              // console.log(this.props.teams[key].channels[0]);
               let defaultChannel = this.props.teams[key].channels[0];
               return (
                 <div key={key} className="team-navlink">

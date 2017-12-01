@@ -7,8 +7,11 @@ class MessageIndex extends React.Component {
     this.state = {
       body: '',
       channel_id: parseInt(this.props.match.params.channelId),
-      messages: this.props.messages
+      // messages: this.props.messages
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInput = this.handleInput.bind(this);
   }
 
   componentWillMount() {
@@ -16,9 +19,27 @@ class MessageIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.messages !== this.props.messages){
-      this.setState({messages: nextProps.messages});
+    if(nextProps.match.params !== this.props.match.params){
+      this.setState({
+        channel_id: parseInt(nextProps.match.params.channelId)
+      });
     }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createMessage(this.state);
+    this.setState({
+      body: ''
+    });
+  }
+
+  handleInput() {
+    return (e) => {
+      this.setState({
+        body: e.target.value
+      });
+    };
   }
 
   render() {
@@ -79,12 +100,14 @@ class MessageIndex extends React.Component {
         }
       </ScrollArea>
       </div>
-      <form> 
+      <form onSubmit={this.handleSubmit}> 
         <div className="input-container">
           <div className="message-padding"></div>
           <input 
+            value={this.state.body}
             type="text" 
-            placeholder={`Message #${currentName}`}/> 
+            placeholder={`Message #${currentName}`}
+            onChange={this.handleInput()}/> 
         </div>
       </form>
     </div>
