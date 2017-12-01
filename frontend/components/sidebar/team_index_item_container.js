@@ -1,22 +1,13 @@
 import { connect } from 'react-redux';
-import { 
-  getTeamsIndex, 
-  // updateTeam, 
-  // deleteTeam,
-  // leaveTeam,
-  // createTeam,
-  // joinTeam 
-} from '../../actions/teams';
-import { getChannelsIndex } from '../../actions/channels';
-import TeamIndex from './team_index';
 
-const mapStateToProps = state => ({
-  teams: state.entities.teams,
-  team_keys: state.session.currentUser.teams
+import { getChannelsIndex } from '../../actions/channels';
+import TeamIndexItem from './team_index_item';
+
+const mapStateToProps = (state, ownProps) => ({
+
 });
 
 const mapDispatchToProps = dispatch => ({
-  getTeamsIndex: () => dispatch(getTeamsIndex()),
   getChannelsIndex: () => dispatch(getChannelsIndex())
   // updateTeam: team => dispatch(updateTeam(team)),
   // deleteTeam: teamId => dispatch(deleteTeam(teamId)),
@@ -25,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
   // joinTeam: teamId => dispatch(joinTeam(teamId)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(TeamIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(TeamIndexItem);

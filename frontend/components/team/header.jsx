@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderDropdownContainer from './header_dropdown_container';
-
+import { Redirect } from 'react-router-dom';
 
 
 
@@ -10,8 +10,15 @@ class Header extends React.Component {
     this.state = {
       dropdownOpen: false
     };
-
     this.toggleDropdown = this.toggleDropdown.bind(this);
+  }
+  
+  componentWillMount() {
+    // console.log('h');
+    // return(
+
+      
+    // );
   }
 
   toggleDropdown() {
@@ -34,8 +41,11 @@ class Header extends React.Component {
     const teamId = this.props.match.params.teamId;
     const currentTeam = this.props.teams[teamId];
     if(currentTeam) {
+      const defaultChannel = currentTeam.channels[0];
+
       return(
         <div>
+          <Redirect to={`/teams/${teamId}/${defaultChannel}`} />
           <div onClick={this.toggleDropdown} className="team-header">
             <h2>{currentTeam.name}</h2> 
             {

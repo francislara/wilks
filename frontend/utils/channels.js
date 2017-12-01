@@ -13,9 +13,9 @@ export const getChannel = channel => (
   })
 );
 
-export const getChannelsIndex = teamId => (
+export const getChannelsIndex = () => (
   $.ajax({
-    url: `api/teams/${teamId}/channels`,
+    url: `api/channels`,
     method: 'GET'
   })
 );

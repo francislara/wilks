@@ -28,7 +28,8 @@ class Api::ChannelsController < ApplicationController
   end
 
   def index
-    @channels = Channel.where(team_id: params[:team_id])
+    teams = current_user.joined_teams.pluck(:team_id)
+    @channels = Channel.where(team_id: teams)
     render :index
   end
 

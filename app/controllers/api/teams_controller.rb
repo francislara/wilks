@@ -6,6 +6,7 @@ class Api::TeamsController < ApplicationController
 
     if @team.save
       JoinedTeam.create(user_id: @team.owner_id, team_id: @team.id)
+      Channel.create(team_id: @team.id, name: 'general')
       render :show
     else
       render json: @team.errors.full_messages, status: 401

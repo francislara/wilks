@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create(username: 'guestuser', email: 'guestuser@guest.com', password: 'password', img_url: 'https://res.cloudinary.com/lara-cloud1/image/upload/v1511690023/profile-picture-green_lnyam8.png')

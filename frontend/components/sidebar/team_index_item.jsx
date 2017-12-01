@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class TeamIndexItem extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class TeamIndexItem extends React.Component {
             </p>
           </div>
         </div>
+        
       );
     } 
   }

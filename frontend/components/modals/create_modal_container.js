@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createTeam } from '../../actions/teams';
-import CreateModal from './Create_modal';
+import CreateModal from './create_modal';
 
 const mapStateToProps = (state, ownProps) => ({
 

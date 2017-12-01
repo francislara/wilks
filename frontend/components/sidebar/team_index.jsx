@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import TeamIndexItem from './team_index_item';
 import TeamModal from '../modals/team_modal';
-import CreateModal from '../modals/create_modal';
+import CreateModalContainer from '../modals/create_modal_container';
 import JoinModalContainer from '../modals/join_modal_container';
 import ScrollArea from 'react-scrollbar';
 import { NavLink } from 'react-router-dom';
@@ -45,13 +45,14 @@ class TeamIndex extends React.Component {
       
     };
 
+
     this.openMainModal = this.openMainModal.bind(this);
     this.openCreateModal = this.openCreateModal.bind(this);
     this.openJoinModal = this.openJoinModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.getTeamsIndex();
   }
 
@@ -113,10 +114,12 @@ class TeamIndex extends React.Component {
         <div className="team-separator"></div>
         {
           this.state.team_keys.map(key => {
+            
             if(this.state.teams[key]){
+              let defaultChannel = this.state.teams[key].channels[0];
               return (
                 <NavLink key={key} to={`/teams/${key}`}>
-                  <TeamIndexItem 
+                  <TeamIndexItem
                     keys={key} 
                     team={this.state.teams[key]} />
                 </NavLink>
@@ -143,9 +146,8 @@ class TeamIndex extends React.Component {
           isOpen={this.state.createModalOpen}
           style={customStyles}
           onRequestClose={this.closeModal}>
-          <CreateModal 
+          <CreateModalContainer 
             closeModal={this.closeModal}
-            createTeam={this.props.createTeam}
             openMainModal={this.openMainModal} />
         </Modal>
 
@@ -158,8 +160,9 @@ class TeamIndex extends React.Component {
             openMainModal={this.openMainModal} />
         </Modal>
           
+        
     </ScrollArea>
-
+    
 
      </div>
     );

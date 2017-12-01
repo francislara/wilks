@@ -33,8 +33,8 @@ export const createChannel = newChannel => dispatch => (
   ))
 );
 
-export const getChannelsIndex = teamId => dispatch => (
-  APIUtil.getChannelsIndex(teamId).then(channels => (
+export const getChannelsIndex = () => dispatch => (
+  APIUtil.getChannelsIndex().then(channels => (
     dispatch(receiveAllChannels(channels))
   ))
 );
