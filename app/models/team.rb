@@ -24,5 +24,7 @@ class Team < ApplicationRecord
     foreign_key: :team_id
 
   has_many :channels
+
+  has_many :messages
     
 end

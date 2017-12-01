@@ -24,6 +24,11 @@ class User < ApplicationRecord
 
   has_many :joined_teams
 
+  has_many :messages,
+    primary_key: :id,
+    class_name: :Message,
+    foreign_key: :author_id
+
   after_initialize :ensure_session_token
 
   attr_reader :password
