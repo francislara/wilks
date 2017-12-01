@@ -4,10 +4,10 @@ class Api::MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.author_id = current_user.id
 
-    if @channel.save
+    if @message.save
       render :show
     else
-      render json: @channel.errors.full_messages, status: 401
+      render json: @message.errors.full_messages, status: 401
     end
 
   end
@@ -26,7 +26,7 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:name, :description, :team_id)
+    params.require(:message).permit(:channel_id, :body, :author_id)
   end
 
 end

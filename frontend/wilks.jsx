@@ -4,11 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 //TESTING ONLY REMOVE WHEN DONE
-import { 
-  createChannel, 
-  getChannelsIndex, 
-  deleteChannel, 
-} from './actions/channels';
+import { getMessageIndex, createMessage } from './actions/messages';
 //TESTING ONLY REMOVE WHEN DONE
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,9 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
   //TESTING ONLY REMOVE WHEN DONE
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.createChannel = createChannel;
-  window.deleteChannel = deleteChannel;
-  window.getChannelsIndex = getChannelsIndex;
+  window.createMessage = createMessage;
+  window.getMessageIndex = getMessageIndex;
   //TESTING ONLY REMOVE WHEN DONE
   
   ReactDOM.render(<Root store={store} />, root);

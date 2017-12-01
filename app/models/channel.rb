@@ -14,4 +14,6 @@ class Channel < ApplicationRecord
   validates :name, :team_id, presence: true
 
   belongs_to :team
+  
+  has_many :messages
 end
