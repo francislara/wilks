@@ -65,18 +65,12 @@ class MessageIndex extends React.Component {
         {
           messageKeys.map(key => {
             let currentMessage = this.props.messages[key];
-            let timestamp, author, body;
+            let timestamp;
             if(currentMessage) {
               timestamp = currentMessage.timestamp;
-              body = currentMessage.body;
             }
-            
-            if (this.props.users[currentMessage.author_id]) {
-
-              author = this.props.users[currentMessage.author_id];
-            } else {
-              author = '';
-            }
+            let body = currentMessage.body;
+            let author = this.props.users[currentMessage.author_id].username;
             if (lastAuthor !== author && lastAuthor) {
               lastAuthor = author;
               return (
