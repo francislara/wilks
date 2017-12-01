@@ -8,6 +8,7 @@ import {
   // joinTeam 
 } from '../../actions/teams';
 import { getChannelsIndex } from '../../actions/channels';
+import { getUserIndex } from '../../actions/session';
 import TeamIndex from './team_index';
 
 const mapStateToProps = state => ({
@@ -17,7 +18,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getTeamsIndex: () => dispatch(getTeamsIndex()),
-  getChannelsIndex: () => dispatch(getChannelsIndex())
+  getChannelsIndex: () => dispatch(getChannelsIndex()),
+  getUserIndex: () => dispatch(getUserIndex())
   // updateTeam: team => dispatch(updateTeam(team)),
   // deleteTeam: teamId => dispatch(deleteTeam(teamId)),
   // leaveTeam: teamId => dispatch(leaveTeam(teamId)),

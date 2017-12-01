@@ -6,6 +6,13 @@ export const postUser = user => (
   })
 );
 
+export const getUserIndex = () => (
+  $.ajax({
+    url: 'api/users',
+    method: 'GET'
+  })
+);
+
 export const postSession = user => (
   $.ajax({
     url: '/api/session',

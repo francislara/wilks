@@ -41,7 +41,8 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    teams = current_user.joined_teams.pluck(:team_id)
+    @users = User.joins(:joined_teams).where(joined_teams: { team_id: teams })
   end
 
   def destroy

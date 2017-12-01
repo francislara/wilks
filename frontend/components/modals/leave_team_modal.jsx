@@ -29,7 +29,7 @@ class LeaveTeamModal extends React.Component {
           <p
             onClick={this.props.closeModal} 
             className="cancel-button">Cancel</p> 
-          <Link to='@me'>
+          <Link to='/teams/@me'>
             <button onClick={this.handleLeave}>Leave Team</button>
           </Link>
         </div>

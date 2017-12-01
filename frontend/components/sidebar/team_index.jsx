@@ -54,6 +54,7 @@ class TeamIndex extends React.Component {
 
   componentWillMount() {
     this.props.getTeamsIndex();
+    this.props.getUserIndex();
   }
 
   componentWillReceiveProps(nextProps) {

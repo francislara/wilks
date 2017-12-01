@@ -1,6 +1,7 @@
 import * as APIUtil from '../utils/session';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
+export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIEVE_SESSION_ERRORS";
 export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
@@ -14,6 +15,11 @@ const receiveCurrentUser = currentUser => ({
   currentUser
 });
 
+const receiveAllUsers = users => ({
+  type: RECEIVE_ALL_USERS,
+  users
+});
+
 const receiveErrors = errors => ({
   type: RECEIVE_SESSION_ERRORS,
   errors
@@ -22,6 +28,12 @@ const receiveErrors = errors => ({
 export const clearSessionErrors = () => ({
   type: CLEAR_SESSION_ERRORS
 });
+
+export const getUserIndex = () => dispatch => (
+  APIUtil.getUserIndex().then(users => (
+    dispatch(receiveAllUsers(users))
+  ))
+);
 
 export const updateUser = currentUser => dispatch => (
   APIUtil.updateUser(currentUser).then(user => (
