@@ -28,12 +28,7 @@ class Header extends React.Component {
       });
     }
   }
-
-  componentWillUnmount() {
-    console.log('hello');
-    document.getElementById(`blocker-${this.props.match.params.teamId}`).classList.add('hidden');
-  }
-
+  
   render() {
     const teamId = this.props.match.params.teamId;
     const currentTeam = this.props.teams[teamId];
