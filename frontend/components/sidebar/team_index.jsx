@@ -5,7 +5,7 @@ import TeamModal from '../modals/team_modal';
 import CreateModalContainer from '../modals/create_modal_container';
 import JoinModalContainer from '../modals/join_modal_container';
 import ScrollArea from 'react-scrollbar';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 
 const customStyles = {
   overlay: {
@@ -97,9 +97,12 @@ class TeamIndex extends React.Component {
     });
   }
 
+
   render() {
+    
     return (
       <div className="sidebar-scroller">
+      
       <ScrollArea
         speed={0.8}
         horizontal={false}
@@ -116,13 +119,17 @@ class TeamIndex extends React.Component {
           this.state.team_keys.map(key => {
             
             if(this.state.teams[key]){
-              let defaultChannel = this.state.teams[key].channels[0];
+              // console.log(this.props.teams[key].channels[0]);
+              let defaultChannel = this.props.teams[key].channels[0];
               return (
-                <NavLink key={key} to={`/teams/${key}`}>
-                  <TeamIndexItem
-                    keys={key} 
-                    team={this.state.teams[key]} />
-                </NavLink>
+                <div key={key} className="team-navlink">
+                  <div id={`blocker-${key}`}className='blocker hidden'></div>
+                  <NavLink to={`/teams/${key}`}>
+                    <TeamIndexItem
+                      keys={key} 
+                      team={this.state.teams[key]} />
+                  </NavLink>
+                </div>
               );    
             }
           })

@@ -41,7 +41,7 @@
 
 .active {
 
-  .channel-item {
+  .channel-item, .channel-item:hover {
     background: rgba(79, 84, 92, .6);
   }
 
@@ -51,7 +51,7 @@
 }
 
 .channel-item:hover {
-  background: rgba(79, 84, 92, .6);
+  background: rgba(79, 84, 92, 0.2);
 
   .channel-name {
     color: #f6f6f7;
@@ -69,4 +69,42 @@
 
 .delete-channel:hover {
   color: #d84040;
+}
+
+.channel-header {
+  display: flex;
+  background: #36393f;
+  width: calc(100vw - 314px);
+  height: 48px;
+  box-shadow: 0 1px 0 #202427,
+  0 2px 0 rgba(0, 0, 0, .06);
+  z-index: 2;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 12px;
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size:  16px;
+    display: inline-block;
+    text-decoration: none;
+    color: #72767d;
+    margin-right: 5px;
+    font-weight: 900;
+  }
+
+  .channel-name {
+    color: #f6f6f7;
+  }
+}
+
+.team-navlink {
+  position: relative;
+  
+  .blocker {
+    background: transparent;
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    z-index: 5;
+  }
 }

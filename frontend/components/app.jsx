@@ -5,6 +5,7 @@ import NavContainer from './navbar/nav_container';
 import TeamIndexContainer from './sidebar/team_index_container';
 import HeaderContainer from './team/header_container';
 import ChannelIndexContainer from './channels/channel_index_container';
+import ChannelHeaderContainer from './channels/channel_header_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute, HomeRoute } from '../utils/route_util';
 import Favicon from 'react-favicon';
@@ -22,6 +23,8 @@ const App = () => (
     <Route exact path="/teams/:teamId/:channelId" 
       component={ChannelIndexContainer} />
     <ProtectedRoute path="/teams" component={NavContainer} />
+    <Route exact path="/teams/:teamId/:channelId"
+      component={ChannelHeaderContainer} />
   </div>
 );
 

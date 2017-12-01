@@ -72,7 +72,7 @@ class ChannelIndexItem extends React.Component {
                 className="delete-channel"
                 onClick={this.openModal}>
                 <i className="fa fa-times" aria-hidden="true"></i></div> :
-            <div></div>
+              <div></div>
           }
 
           <Modal

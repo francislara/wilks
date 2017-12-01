@@ -13,14 +13,6 @@ class Header extends React.Component {
     this.toggleDropdown = this.toggleDropdown.bind(this);
   }
   
-  // componentWillMount() {
-  //   // console.log('h');
-  //   // return(
-
-      
-  //   // );
-  // }
-
   toggleDropdown() {
     var classList = document.getElementById('header-dropdown').className.split(/\s+/);
    
@@ -37,10 +29,22 @@ class Header extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    console.log('hello');
+    document.getElementById(`blocker-${this.props.match.params.teamId}`).classList.add('hidden');
+  }
+
   render() {
     const teamId = this.props.match.params.teamId;
     const currentTeam = this.props.teams[teamId];
     if(currentTeam) {
+      if (this.props.team_keys) {
+        this.props.team_keys.forEach(key => {
+          document.getElementById(`blocker-${key}`).classList.add('hidden');
+        });
+      }
+      document.getElementById(`blocker-${teamId}`).classList.remove('hidden');
+
       const defaultChannel = currentTeam.channels[0];
 
       return(
@@ -58,6 +62,13 @@ class Header extends React.Component {
         </div>
       );
     } else {
+      if (this.props.team_keys) {
+        this.props.team_keys.forEach(key => {
+          if (document.getElementById(`blocker-${key}`)) {
+            document.getElementById(`blocker-${key}`).classList.add('hidden');
+          }
+        });
+      }
       return(
         <div className="team-header"></div>
       );
