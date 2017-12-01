@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
     resources :joined_teams, only: %i(index)
     resources :channels, only: %i(destroy show create index)
+    resources :messages, only: %i(create show index)
   end
 
   root to: 'root#root'
