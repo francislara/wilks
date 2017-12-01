@@ -11,13 +11,19 @@ class ChannelIndexItem extends React.Component {
 
   render() {
     console.log(this.props);
-    return (
-      <div>
-        {
-          this.props.channel ? this.props.channel.name : ' '
-        }
-      </div>
-    );
+
+    if(this.props.channel)
+    {
+      return (
+        <div className="channel-item">
+          <p># </p> <p className="channel-name"> {`${this.props.channel.name}`}</p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="channel-item"></div>
+      );
+    }
   }
 }
 

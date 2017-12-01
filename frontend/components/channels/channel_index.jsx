@@ -48,6 +48,7 @@ class ChannelIndex extends React.Component {
           speed={0.8}
           horizontal={false}
         >
+        <div className="lazy-padding"></div>
         {
           channelKeys.map(key => {
             // console.log(this.state.channel_keys);

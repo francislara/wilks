@@ -1,0 +1,35 @@
+.channel-scrollarea {
+  width: 240px;
+  height: calc(100vh - 100px);
+  background: #303236;
+}
+
+.channel-item {
+  width: 208px;
+  height: 32px;
+  padding: 0 8px;
+  margin: 1px 0px 1px 8px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
+    color: #72767d;
+    margin-right: 5px;
+  }
+}
+
+.channel-item:hover {
+  background: rgba(79, 84, 92, .6);
+
+  .channel-name {
+    color: #f6f6f7;
+  }
+}
+
+.lazy-padding {
+  height: 16px;
+}
