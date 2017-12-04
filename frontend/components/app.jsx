@@ -37,7 +37,12 @@ const App = () => (
       <Route exact path="/teams/:teamId/:channelId"
         component={MessageIndexContainer} />
       <Route exact path="/teams/@me" render={() => (
-        <div className="message-index"></div>
+        <div className="message-index">
+          <div className="welcome-message">
+            <h2>Hello and welcome to Wilks!</h2>
+            <h3>Click one of the team icons on the side to get started!</h3>
+          </div>
+        </div>
       )} />
       <Route path="/teams/:teamId" 
         component={MemberIndexContainer} />

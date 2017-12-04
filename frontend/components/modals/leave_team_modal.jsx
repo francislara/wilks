@@ -13,9 +13,11 @@ class LeaveTeamModal extends React.Component {
   }
 
   handleLeave() {
+    // e.preventDefault();
     this.props.leaveTeam(this.props.teamId);
     this.props.closeModal();
     this.props.toggleDropdown();
+
   }
   
   

@@ -15,6 +15,7 @@ class UserModal extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleErrors = this.handleErrors.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleInput(type) {
@@ -31,6 +32,11 @@ class UserModal extends React.Component {
       this.props.closeModal()
     );
     
+  }
+
+  handleLogout(e) {
+    e.preventDefault();
+    this.props.logout();
   }
 
   handleErrors(type) {
@@ -77,7 +83,7 @@ class UserModal extends React.Component {
             />
           </label>
           <button className="save-button" onClick={this.handleSubmit}>Save</button>
-          <button className="logout-button" onClick={this.props.logout}>Logout</button>
+          <button className="logout-button" onClick={this.handleLogout}>Logout</button>
         </form>
       // </div>
     );

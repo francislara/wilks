@@ -36,13 +36,15 @@ class ChannelIndexItem extends React.Component {
 
   }
 
-  openModal() {
+  openModal(e) {
+    e.preventDefault();
     this.setState({
       modalOpen: true,
     });
   }
 
-  closeModal() {
+  closeModal(e) {
+    e.preventDefault();
     this.setState({
       modalOpen: false
     });

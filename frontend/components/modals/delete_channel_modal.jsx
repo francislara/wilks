@@ -11,7 +11,8 @@ class DeleteChannelModal extends React.Component {
 
   }
 
-  handleDelete() {
+  handleDelete(e) {
+    e.preventDefault();
     this.props.deleteChannel(this.props.channelId);
     this.props.closeModal();
   }
