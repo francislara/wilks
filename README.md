@@ -44,3 +44,6 @@ Wilks is a full stack web application based on the popular chat app Discord. Usi
  
 ### Post images
  - Users will be able to upload and post images to chat channels
+
+### Splash Page
+ - A splash page with an intro of what the app does when you first visit the site
