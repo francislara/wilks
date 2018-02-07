@@ -11,6 +11,8 @@ import MemberIndexContainer from './members/member_index_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute, HomeRoute } from '../utils/route_util';
 import Favicon from 'react-favicon';
+import { Navbar, Jumbotron, Button } from 'react-bootstrap';
+
 
 const App = () => (
   <div className="app-container display-flex">
