@@ -144,13 +144,3 @@ def sign_in(username)
   fill_in 'Password', with: 'abcdef'
   click_button 'Sign In'
 end
-
-def make_link(title = nil, url = nil)
-  title ||= 'reddit'
-  url ||= 'http://www.reddit.com'
-
-  visit new_link_path
-  fill_in 'Title', with: title
-  fill_in 'URL', with: url
-  click_button 'Create New Link'
-end

@@ -12,6 +12,7 @@ import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute, HomeRoute } from '../utils/route_util';
 import Favicon from 'react-favicon';
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
+import { ChatManager, TokenProvider } from '@pusher/chatkit';
 
 
 const App = () => (
